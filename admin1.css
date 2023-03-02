@@ -1,0 +1,574 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.root{
+    --white:#fff;
+}
+
+.container
+{
+    position: relative;
+    width: 100%;
+    /* border: 3px solid red; */
+}
+
+.navigation
+{
+    position: fixed;
+    width: 300px;
+    left: 0;
+    border-left: 10px solid rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    transition: 0.2s;
+    overflow: hidden;
+
+}
+.navigation.active
+{
+    width: 90px;
+}
+
+.navigation ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* border: 3px solid yellow; */
+}
+
+.navigation ul li 
+{
+    position:relative;
+    /* border: 3px solid rgb(0, 255, 136); */
+    list-style: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    width: 100%;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered
+
+{
+    background-color: #ffffff;
+}
+
+.navigation ul li a 
+{
+    position: relative;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    /* border: 1px solid red; */
+    /* padding-right:20px; */
+    display: flex;
+     width: 100%;
+
+    
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a 
+{
+    /* border: 3px solid rgb(247, 0, 255); */
+    color: rgb(0, 0, 0);
+}
+
+.navigation ul li a .icon
+{
+    position: relative;
+    min-width: 80px;
+    text-align: center;
+    display: block;
+    line-height: 60px;
+    font-size: 35px;
+    padding-top: 5px;
+}
+.material-symbols-outlined
+{
+    font-size: 35px;
+}
+
+.navigation ul li a .title
+{ 
+    position: relative;
+    padding:0 10px;
+    width: 50%;
+    height: 60px;
+    line-height: 60px;
+    /* border: 2px solid green; */
+    text-align:start ;
+    white-space: nowrap;
+
+}
+
+li:nth-child(1)
+{
+    pointer-events: none;
+    margin-bottom: 45px;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after
+{
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 0;
+    /* border: 3px solid red; */
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 35px 35px 0 10px white;
+    
+}
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before
+{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    /* border: 3px solid red; */
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 35px -35px 0 10px white;
+    
+}
+
+.main
+{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    /* border: 3px solid red; */
+    background: white;
+    min-height: 100vh;
+    transition: 0.3s;
+} 
+
+.main.active
+{
+    width: calc(100% - 90px);
+    left: 90px;
+
+}
+
+.topbar
+{
+    position: relative;
+    /* border: 3px solid red; */
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.toggle
+{
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.search
+{
+    /* border: 3px solid red; */
+
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.search label
+{
+    position: relative;
+    width: 100%;
+}
+.search label input
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;
+    padding-left: 35px;
+    align-items: center;
+    outline: none;
+    border: 1px solid black;
+}
+.search label ion-icon
+{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+}
+.user img
+{
+    position:relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.cardBox
+{
+    position:relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+
+}
+
+.cardBox .card
+{
+    position: relative;
+    display: flex;
+    background: rgb(17, 17, 17);
+    padding: 30px;
+    box-shadow: 0 7px 25px gray;
+    border-radius: 25px;
+    justify-content: space-between;
+}
+.cardBox .card:nth-child(1):hover
+{
+    background: navy;
+}
+.cardBox .card:nth-child(2):hover
+{
+    background: lightseagreen;
+}
+.cardBox .card:nth-child(3):hover
+{
+    background: darkred;
+}
+.cardBox .card:nth-child(4):hover
+{
+    background: orange;
+}
+
+
+.cardBox .card .numbers
+{
+    font-weight: 500;
+    font-size: 2em;
+    color: white;
+}
+
+
+.cardBox .card .cardName
+{
+    color: white;
+    font-size: 1.2em;
+    margin-top: 5px;
+
+}
+.cardBox .card .cardlogo
+{
+    font-size: 3em;
+    color: white;
+}
+
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .cardlogo
+{
+    color: white;
+}
+
+.details
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    /* text-align: center; */
+    /* border: 3px solid red; */
+    /* margin-top: 10px; */
+}
+.details .recentOrders
+{
+    position: relative;
+    width: 100%;
+    display: grid;
+    min-height: 500px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 7px 25px gray;
+    border-radius: 25px;
+
+}
+.cardHeader
+{
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* border: 3px solid rgb(22, 196, 45); */
+    padding-top: 6px;
+
+}
+.cardHeader h2
+{
+    font-weight: 600;
+    color: black;
+}
+.cardHeader .btn
+{
+    position: relative;
+    color: white;
+    padding: 5px 10px;
+    background: black;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.details table
+{
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-top: 0px; */
+    /* border: 3px solid red; */
+
+}
+
+.details table thead td
+{
+    font-weight: 600;    
+}
+.details .recentOrders tr
+{
+    color: black;
+    border-bottom: 2px solid gray;
+    
+}
+.recentOrders tbody tr:hover
+{
+    background: black;
+    color: white;
+}
+.recentOrders table tr:last-child
+{
+    border-bottom: none;
+}
+.details .recentOrders table tbody tr:hover
+{
+    background: black;
+    color: white;
+}
+.details .recentOrders table tr td
+{
+    padding: 10px;
+}
+.details .recentOrders table tr td:last-child
+{
+    text-align: end;
+}
+.details .recentOrders table tr td:nth-child(2)
+{
+    text-align: end;
+}
+.status.delivered
+{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    border-color: black;
+}
+.status.pending
+{
+    padding: 2px 4px;
+    background: yellow;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    border-color: black;
+
+}
+.status.return
+{
+    padding: 2px 4px;
+    background: red;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.status.progress
+{
+    padding: 2px 4px;
+    background: blue;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.recentCustomers
+{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 7px 25px gray;
+    border-radius: 20px;
+}
+.recentCustomers .immg
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.recentCustomers .immg img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.recentCustomers table tr:hover
+{
+    background: rgb(0, 0, 0);
+    color: white;
+}
+.recentCustomers table tr td
+{
+    padding: 12px 10px;
+}
+.recentCustomers table tr td h4
+{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+.recentCustomers table tr td h4 span
+{
+    font-size: 14px;
+    color: black;
+}
+.recentCustomers table tr:hover td h4 span
+{
+    color: white;
+}
+
+@media (max-width: 991px)
+{
+    .navigation
+    {
+        left: -300px;
+    }
+    .navigation.active
+    {
+        width: 300px;
+       left: 0; 
+    }
+    .main
+    {
+        width: 100%;
+        left: 0;
+    }    
+    .main.active
+    {
+        left: 300px ;
+    }
+    .cardBox
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .cardHeader h2
+    {
+        font-size: 20px;
+    }
+    .user
+    {
+        min-width: 40px;
+    }
+    
+}
+@media (max-width: 768px) {
+
+    .details
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .recentOrders
+    {
+        overflow-x: auto;
+    }
+    .status.progress
+    {
+        white-space: nowrap;
+    }
+}
+@media (max-width:480px)
+{
+    .cardBox
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .cardHeader h2
+    {
+        font-size: 20px;
+    }
+    .user
+    {
+        min-width: 40px;
+    }
+    .navigation
+    {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .navigation.active 
+    {
+        width: 100%;
+        left: 0;
+    }
+    .toggle
+    {
+        z-index: 10001;
+    }
+    .main.active .toggle
+    {
+        position: fixed;
+        right: 0;
+        left: initial;
+        color: rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
+    }
+}
+::selection {
+    color:white;
+    background: blue;
+}
